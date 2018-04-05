@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="76e3e408-4c63-4403-86d8-24136c432bc4">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[select nomb_equi, desc_equi from equipos]]>
+	</queryString>
+	<field name="nomb_equi" class="java.lang.String"/>
+	<field name="desc_equi" class="java.lang.String"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="101">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="121" backcolor="#3399FF" uuid="7d1cd691-b647-48c2-acc2-a1163c6b8632"/>
+				<staticText>
+					<reportElement x="20" y="20" width="441" height="43" forecolor="#FFFFFF" uuid="a0b4d917-d815-4713-94dd-06eb28c29a00"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Equipos con su datos]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="20" y="101" width="220" height="20" forecolor="#FFFFFF" uuid="cb3c7df4-7731-4ac2-95a1-5dfef9e09dc7"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Luis Eduardo Cañas Santos]]></text>
+				</staticText>
+				<image>
+					<reportElement x="507" y="20" width="88" height="81" uuid="c06384d0-9447-4393-beef-e6e17f60830d"/>
+					<imageExpression><![CDATA["/home/luisedu/Imágenes/trabajo-en-equipo.png"]]></imageExpression>
+				</image>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="1d4eae46-3123-4940-9d66-2ad46331197f"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="277" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="3d30abf5-a148-4a7d-8e14-577eb9d19afa"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre del equipo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="277" y="0" width="277" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="b710f973-ce09-47ee-b44a-2679d86eb062"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descripción]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="4021627e-bedc-41bf-90ec-6b4f6e3b458b"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="277" height="20" uuid="bd7efe72-f8cf-48f3-ae8f-f787621e34ec"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nomb_equi}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="277" y="0" width="277" height="20" uuid="c9986641-f738-47df-8d7b-2a3815cf4a7d"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{desc_equi}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="24fd0a80-d0fa-4e08-869e-27c89208f51a"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="f18bf8f8-d9f8-428d-b0ba-24d65852d8e6"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="2275716a-bc70-4afb-9eee-8011a4515c59"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>
